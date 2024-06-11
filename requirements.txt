@@ -1,5 +1,1 @@
-Flask
-Flask-SocketIO
-SQLAlchemy
-Flask-SQLAlchemy
-passlib
+Flask==3.0.3
