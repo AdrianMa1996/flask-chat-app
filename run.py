@@ -22,7 +22,8 @@ def start_page(name):
 
         db.session.add(new_message)
         db.session.commit()
-    return render_template('index.html')
+    messages_from_db = Message.query.order_by(Message.created_at).all()
+    return render_template('index.html', messages=messages_from_db, name=name)
 
 if __name__ == "__main__":
     app.run(debug=True)
