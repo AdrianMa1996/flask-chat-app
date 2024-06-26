@@ -1,0 +1,14 @@
+.chatForm {
+    position: fixed;
+    background-color: bisque;
+}
+
+.messageDate {
+    font-size: 10px;
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    color: rgb(0, 0, 0, 0.5);
+    background-color: brown;
+    
+}
