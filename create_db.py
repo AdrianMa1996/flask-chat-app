@@ -1,4 +1,4 @@
-from run import app, db
+from chat import app, db
 
 with app.app_context():
     db.create_all()
