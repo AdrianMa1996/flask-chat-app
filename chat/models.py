@@ -11,9 +11,15 @@ from chat import admin, db
 
 class Message(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
-    user: Mapped[str]
+    sender_id: Mapped[int]
+    chat_room_id: Mapped[int]
     content: Mapped[str]
     created_at: Mapped[DateTime] = mapped_column(DateTime, default=datetime.utcnow)
+
+class ChatRoom(db.Model):
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_one_id: Mapped[int]
+    user_two_id: Mapped[int]
 
 
 # Flask-Security-Too

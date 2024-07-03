@@ -26,10 +26,10 @@
 
     <div class="container">
         {% for message in messages %}
-        <div class="d-flex {%if name == message.user%} justify-content-end {% else %} justify-content-start {% endif %} mt-5">
+        <div class="d-flex {%if current_user.id == message.sender_id%} justify-content-end {% else %} justify-content-start {% endif %} mt-5">
             <div class="card">
                 <div class="card-body">
-                    <b>{{ message.user }}:</b>
+                    <b>{{ message.sender_name }}:</b>
                     {{ message.content }}
 
                     <span class="messageDate">{{ message.created_at.strftime('%d.%m.%Y %H:%m') }}</span>
