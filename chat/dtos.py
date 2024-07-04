@@ -10,6 +10,16 @@ class MessageDTO:
         self.chat_room_id = chat_room_id
         self.content = content
         self.created_at = created_at
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'sender_id': self.sender_id,
+            'sender_name': self.sender_name,
+            'chat_room_id': self.chat_room_id,
+            'content': self.content,
+            'created_at': self.created_at.isoformat()
+        }
 
 def convert_message_to_messagedto(message: Message) -> MessageDTO:
     return MessageDTO(
