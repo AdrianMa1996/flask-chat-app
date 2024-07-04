@@ -11,7 +11,7 @@ class MessageDTO:
         self.content = content
         self.created_at = created_at
 
-def convert_to_message_dto(message: Message) -> MessageDTO:
+def convert_message_to_messagedto(message: Message) -> MessageDTO:
     return MessageDTO(
         id=message.id,
         sender_id=message.sender_id,

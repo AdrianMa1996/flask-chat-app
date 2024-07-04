@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 
 from chat import app, db
 from .models import Message, User
-from .dtos import MessageDTO, convert_to_message_dto
+from .dtos import MessageDTO, convert_message_to_messagedto
 
 @app.route("/", methods=['GET', 'POST'])
 @login_required
@@ -23,7 +23,7 @@ def start_page():
     messages_from_db = Message.query.order_by(Message.created_at).all()
     messages_dtos = []
     for message in messages_from_db:
-        message_dto = convert_to_message_dto(message)
+        message_dto = convert_message_to_messagedto(message)
         messages_dtos.append(message_dto)
 
     return render_template('index.html', messages=messages_dtos)

@@ -12,37 +12,62 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    {% if current_user.is_authenticated %}
-        <span>Welcome {{ current_user.email }}!</span>
-        <a href="{{ url_for_security('logout') }}">logout</a>
-    {% else %}
-        <a href="{{ url_for_security('login') }}">login</a>
-    {% endif %}
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Chat Messenger</a>
+    <div class="ApplicationContainer">
+        <div class="NavContainer">
+            <p class="left bigFont">{{ current_user.username }}</p>
+            <p class="center bigFont">WebChat</p>
+            <a class="right logoutButton" href="{{ url_for_security('logout') }}">Logout</a>
         </div>
-    </nav>
 
-    <div class="container">
-        {% for message in messages %}
-        <div class="d-flex {%if current_user.id == message.sender_id%} justify-content-end {% else %} justify-content-start {% endif %} mt-5">
-            <div class="card">
-                <div class="card-body">
-                    <b>{{ message.sender_name }}:</b>
-                    {{ message.content }}
+        <div class="chatContainer">
+            <div class="left chatRoomContainer">
+                <div class="addChatContainer">
+                    <p class="left newChatLabel">New Chat:</p>
+                    <form class="addChatForm" action="" method="post">
+                        <input type="text" name="content" class="addChatInput" placeholder="Enter email here">
+                        <button class="addChatSubmit" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div>
+                    <div class="ChatsLabelContainer">
+                        <p class="center ChatsLabel">Chats:</p>
+                    </div>
+                    <div class="EnterChatBody">
+                        <b class="EnterChatUser" >Musterman</b>
+                        <b class="EnterChatLastMessage">Letzte Nachricht von Musterman</b>
+                    </div>
+                    <div class="EnterChatBody">
+                        <b class="EnterChatUser" >Musterfrau</b>
+                        <b class="EnterChatLastMessage">Letzte Nachricht von Musterfrau</b>
+                    </div>
+                </div>
+            </div>
 
-                    <span class="messageDate">{{ message.created_at.strftime('%d.%m.%Y %H:%m') }}</span>
+            <div class="chatMessageContainer right">
+                <div class="messageContainer">
+                    {% for message in messages %}
+                    <div class="d-flex {%if current_user.id == message.sender_id%} justify-content-end {% else %} justify-content-start {% endif %} mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <b>{{ message.sender_name }}:</b>
+                                {{ message.content }}
+            
+                                <span class="messageDate">{{ message.created_at.strftime('%d.%m.%Y %H:%m') }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            
+                <div class="chatFormContainer">
+                    <form class="chatForm" action="" method="post">
+                        <input type="text" name="content" class="chatMessageInput" placeholder="Bitte gebe deine Nachricht an">
+                        <button class="chatMessageSubmit" type="submit" id="button-addon2">Senden</button>
+                    </form>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
 
-    <form class="input-group mb-3 chatForm" action="" method="post">
-        <input type="text" name="content" class="form-control" placeholder="Bitte gebe deine Nachricht an">
-        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Senden</button>
     </div>
-
 </body>
 </html>
