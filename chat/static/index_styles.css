@@ -1,5 +1,15 @@
 /* Grunddesign */
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+button:hover{
+    background-color:  #B0B0B0;
+}
+
 .bigFont {
     font-weight: bold;
     font-size: 30px;
@@ -225,4 +235,8 @@ sonstiges */
     border-bottom: 2px solid #B0B0B0;
     border-left: 2px solid #B0B0B0;
     border-right: 2px solid #B0B0B0;
+}
+
+.logoutButton:hover {
+    background-color:  #B0B0B0;
 }
