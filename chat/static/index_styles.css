@@ -1,5 +1,3 @@
-/* Grunddesign */
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -32,8 +30,6 @@ button:hover{
     margin: 0;
     text-align: right; /* Rechts ausrichten */
 }
-
-/* Sektionen */
 
 .ApplicationContainer{
     height: 100dvh;
@@ -69,21 +65,12 @@ button:hover{
     border-right: 2px solid #B0B0B0;
 }
 
-.chatRoomContainer{
-    height: 100%;
-    width: 25%;
-    overflow-y: auto;
-    margin: 0 auto;
-    background-color: #FEFEFE;
-}
-
 .chatMessageContainer{
     height: 100%;
-    width: 75%;
+    width: 100%;
     overflow-y: auto;
     margin: 0 auto;
     background-color: #FEFEFE;
-    border-left: 2px solid #B0B0B0;
 }
 
 .messageContainer {
@@ -95,49 +82,12 @@ button:hover{
     border-bottom: 2px solid #B0B0B0;
 }
 
-.addChatContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-    border-bottom: 2px solid #B0B0B0;
-}
-
 .chatFormContainer {
     height: 50px;
     width: 100%;
     overflow-y: auto;
     margin: 0 auto;
     background-color: #FEFEFE;
-}
-
-.ChatsLabelContainer{
-    border-bottom: 2px solid #B0B0B0;
-}
-
-/* Elemente */
-
-/* Neuer Chat */
-
-.newChatLabel{
-    font-weight: bold;
-    font-size: 20px;
-    height: 100%;
-    width: 30%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.addChatForm{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 70%;
-    padding-right: 20px;
 }
 
 .addChatInput{
@@ -149,38 +99,6 @@ button:hover{
     border-right: 0px;
     outline: none;
 }
-
-.addChatSubmit{
-    height: 70%;
-    width: 100px;
-    border: 2px solid #B0B0B0;
-    background-color: #FEFEFE;
-}
-
-/* Chat-Liste */
-
-.EnterChatBody{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 10px;
-    padding-left: 20px;
-    border-bottom: 2px solid #B0B0B0;
-}
-
-.EnterChatUser{
-    height: 50%;
-    width: 100%;
-}
-
-.EnterChatLastMessage{
-    height: 50%;
-    width: 100%;
-    font-weight: normal;
-}
-
-/* Chat Formular */
 
 .chatForm {
     display: flex;
@@ -206,22 +124,12 @@ button:hover{
     border-left: 2px solid #B0B0B0;
 }
 
-/* Nachrichte-Feld */
-
 .messageDate {
     font-size: 12px;
     position: absolute;
     right: 4px;
     bottom: 4px;
     color: rgb(0, 0, 0, 0.5);
-}
-/* 
-sonstiges */
-
-.ChatsLabel{
-    font-weight: bold;
-    font-size: 20px;
-    margin: 15px;
 }
 
 .logoutButton{

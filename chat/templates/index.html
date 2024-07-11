@@ -21,29 +21,6 @@
         </div>
 
         <div class="chatContainer">
-            <div class="left chatRoomContainer">
-                <div class="addChatContainer">
-                    <p class="left newChatLabel">New Chat:</p>
-                    <form class="addChatForm" action="" method="post">
-                        <input type="text" name="content" class="addChatInput" placeholder="Enter email here">
-                        <button class="addChatSubmit" type="submit">Submit</button>
-                    </form>
-                </div>
-                <div>
-                    <div class="ChatsLabelContainer">
-                        <p class="center ChatsLabel">Chats:</p>
-                    </div>
-                    <div class="EnterChatBody">
-                        <b class="EnterChatUser" >Musterman</b>
-                        <b class="EnterChatLastMessage">Letzte Nachricht von Musterman</b>
-                    </div>
-                    <div class="EnterChatBody">
-                        <b class="EnterChatUser" >Musterfrau</b>
-                        <b class="EnterChatLastMessage">Letzte Nachricht von Musterfrau</b>
-                    </div>
-                </div>
-            </div>
-
             <div class="chatMessageContainer right">
                 <div class="messageContainer">
                     {% for message in messages %}
@@ -68,7 +45,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <script>

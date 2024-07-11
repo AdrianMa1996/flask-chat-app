@@ -1,9 +1,8 @@
-from flask import Blueprint, redirect, render_template, request, send_from_directory
+from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
-from werkzeug.utils import secure_filename
 from .extensions import db
-from .models import Message, User
-from .dtos import MessageDTO, convert_message_to_messagedto
+from .models import Message
+from .dtos import convert_message_to_messagedto
 
 main_blueprint = Blueprint('main', __name__)
 
@@ -15,7 +14,6 @@ def start_page():
 
         new_message = Message(
             sender_id=current_user_id,
-            chat_room_id=123,
             content=request.form['content']
         )
 

@@ -1,9 +1,9 @@
 from flask import Flask
+from flask_security import SQLAlchemyUserDatastore
 from .extensions import db, migrate, admin, socketio, security
 from .models import Role, User
 from .views import main_blueprint
 from .events import socketio_blueprint
-from flask_security import SQLAlchemyUserDatastore, Security
 
 def create_app(config_filename='config'):
     app = Flask(__name__)

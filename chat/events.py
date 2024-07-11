@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_socketio import emit
-from .extensions import socketio, db
+from .extensions import socketio
 from .models import Message
 from .dtos import convert_message_to_messagedto
 
